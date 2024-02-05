@@ -1,2 +1,2 @@
-# Blogv2
-Notion Blog
+# m_yuya's monologue
+ブログ Version2
