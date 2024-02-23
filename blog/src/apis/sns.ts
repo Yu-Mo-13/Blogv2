@@ -5,25 +5,25 @@ const endpoint = "sns";
 export const getAllSns = async () => {
   const headers: HeadersInit = {
     "Content-Type": "application/json",
-    "X-MICROCMS-API-KEY": apiKey || '', // Ensure apiKey is not undefined
+    "X-MICROCMS-API-KEY": apiKey || "", // Ensure apiKey is not undefined
   };
-  const res = await fetch(`${baseUrl}${endpoint}`,{
+  const res = await fetch(`${baseUrl}${endpoint}`, {
     method: "GET",
-    headers
+    headers,
   });
   const data = await res.json();
   return data;
-}
+};
 
 export const getSnsById = async (id: string) => {
   const headers: HeadersInit = {
     "Content-Type": "application/json",
-    "X-MICROCMS-API-KEY": apiKey || '', // Ensure apiKey is not undefined
+    "X-MICROCMS-API-KEY": apiKey || "", // Ensure apiKey is not undefined
   };
-  const res = await fetch(`${baseUrl}${endpoint}/${id}`,{
+  const res = await fetch(`${baseUrl}${endpoint}/${id}`, {
     method: "GET",
-    headers
+    headers,
   });
   const data = await res.json();
   return data;
-}
+};

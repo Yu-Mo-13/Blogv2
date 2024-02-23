@@ -10,11 +10,11 @@ export const getAllArticles = async () => {
   };
   const res = await fetch(`${baseUrl}${endpoint}`, {
     method: "GET",
-    headers
+    headers,
   });
   const data = await res.json();
   return data;
-}
+};
 
 export const getArticleById = async (id: string) => {
   const headers: HeadersInit = {
@@ -23,8 +23,8 @@ export const getArticleById = async (id: string) => {
   };
   const res = await fetch(`${baseUrl}${endpoint}/${id}`, {
     method: "GET",
-    headers
+    headers,
   });
   const data = await res.json();
   return data;
-}
+};
