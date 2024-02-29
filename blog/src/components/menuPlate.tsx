@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const MenuPlate = () => {
   return (
-    <div id="menu" className="flex justify-center">
+    <div id="menu" className="flex flex-col justify-center hover:underline-offset-3 m-60">
       {topMenu.map((menu, index) => {
         return (
           <Link href={`/${menu.toLowerCase()}`} key={index}>
