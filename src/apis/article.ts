@@ -13,7 +13,7 @@ export const getAllArticles = async () => {
     headers: headers,
   });
   const data = await res.json();
-  return data;
+  return data.contents;
 };
 
 export const getArticleById = async (id: string) => {
@@ -21,7 +21,7 @@ export const getArticleById = async (id: string) => {
     "Content-Type": "application/json",
     "X-MICROCMS-API-KEY": apiKey || "", // Ensure apiKey is not undefined
   };
-  const res = await fetch(`${baseUrl}${endpoint}/${id}`, {
+  const res = await fetch(`${baseUrl}${endpoint}?id=${id}`, {
     method: "GET",
     headers: headers,
   });
