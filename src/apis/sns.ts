@@ -25,5 +25,5 @@ export const getSnsById = async (id: string) => {
     headers: headers,
   });
   const data = await res.json();
-  return data;
+  return data.contents;
 };
