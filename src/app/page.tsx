@@ -4,17 +4,10 @@ import { Link, Box, Image } from "@chakra-ui/react";
 import { topMenu, topMenuLinks } from "@/constants/const";
 import { getAllArticles, getArticleById } from "@/apis/article";
 import type { Article } from "@/types/article";
+import { convertDate } from "@/functions/fucntion";
 
 export default async function Home() {
   const articles = await getAllArticles();
-  // yyyy-mm-ddThh:mm:ss.sssZをyyyy/mm/ddに変換
-  articles.forEach((article: Article) => {
-    const date = new Date(article.createdAt);
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    article.createdAt = `${year}/${month}/${day}`;
-  });
   return (
     <main className={styles.main}>
       <Image src="/monologue.png" alt="icon" width={120} height={82}></Image>
@@ -27,7 +20,7 @@ export default async function Home() {
       <Box className={styles.card} fontSize={25} borderBottom="medium" borderBottomStyle="solid">Recent Posts</Box>
       {articles.length > 0 && articles.map((article: Article) => (
         <Link key={article.id} href={`/articles/id=${article.id}`}>
-          <Box className={styles.card} fontSize={20}>{`${article.title} (更新日:${article.createdAt})`}</Box>
+          <Box className={styles.card} fontSize={20}>{`${article.title} (更新日:${convertDate(article.createdAt)})`}</Box>
         </Link>
       ))}
     </main>
