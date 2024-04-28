@@ -12,7 +12,7 @@ export default async function Home() {
       <Box className={styles.title} fontSize={25} fontWeight="bold">m_yuya&apos;s monologue</Box>
       <Box className={styles.title} fontSize={25} borderBottom="medium" borderBottomStyle="solid">SNS</Box>
       {snslinks.map((snslink, index) => (
-        <Link key={index} href={snslink.url} fontSize={22}>
+        <Link className={styles.card} key={index} href={snslink.url} fontSize={22}>
           <h2>{snslink.application} ({snslink.account})</h2>
         </Link>
       ))}

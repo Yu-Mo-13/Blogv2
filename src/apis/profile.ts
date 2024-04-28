@@ -13,7 +13,7 @@ export const getAllProfiles = async () => {
     headers: headers,
   });
   const data = await res.json();
-  return data;
+  return data.contents;
 }
 
 export const getProfilesById = async (id: string) => {

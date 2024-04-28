@@ -15,7 +15,7 @@ export default async function Home() {
       <Box className={styles.title} fontSize={25} borderBottom="medium" borderBottomStyle="solid">Blog</Box>
       {articles.map((article, index) => (
         <Link key={index} href={rootUrl + endPoints.articles + '/' + article.id} fontSize={22}>
-          <h2>{article.title} (更新日:{convertDate(article.createdAt)})</h2>
+          <h2>{article.title} ({convertDate(article.createdAt)}更新)</h2>
         </Link>
       ))}
     </main>

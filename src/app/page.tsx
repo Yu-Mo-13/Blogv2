@@ -10,17 +10,17 @@ export default async function Home() {
   const articles = await getAllArticles();
   return (
     <main className={styles.main}>
-      <Image src="/monologue.png" alt="icon" width={120} height={82}></Image>
+      <Image className={styles.logo} src="/monologue.png" alt="icon" width={120} height={82}></Image>
       <Box className={styles.title} fontSize={25} fontWeight="bold">m_yuya&apos;s monologue</Box>
       {topMenu.map((menu, index) => (
-        <Link key={index} href={topMenuLinks[index]} fontSize={22}>
+        <Link className={styles.card} key={index} href={topMenuLinks[index]} fontSize={22}>
           <h2>{menu} &rarr;</h2>
         </Link>
       ))}
       <Box className={styles.card} fontSize={25} borderBottom="medium" borderBottomStyle="solid">Recent Posts</Box>
       {articles.length > 0 && articles.map((article: Article) => (
-        <Link key={article.id} href={`/articles/id=${article.id}`}>
-          <Box className={styles.card} fontSize={20}>{`${article.title} (更新日:${convertDate(article.createdAt)})`}</Box>
+        <Link className={styles.card} key={article.id} href={`/articles/id=${article.id}`}>
+          <Box className={styles.card} fontSize={20}>{`${article.title} (${convertDate(article.createdAt)}更新)`}</Box>
         </Link>
       ))}
     </main>
