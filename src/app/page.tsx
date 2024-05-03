@@ -11,7 +11,9 @@ export default async function Page() {
   return (
     <main className={styles.main}>
       <Image className={styles.logo} src="/monologue.png" alt="icon" width={120} height={82}></Image>
-      <Box className={styles.title} fontSize={25} fontWeight="bold">m_yuya&apos;s monologue</Box>
+      <Link className="title" key={"title"} href="/">
+        <Box className={styles.title} fontSize={25} fontWeight="bold">m_yuya&apos;s monologue</Box>
+      </Link>
       {topMenu.map((menu, index) => (
         <Link className={styles.card} key={index} href={topMenuLinks[index]} fontSize={22}>
           <h2>{menu} &rarr;</h2>

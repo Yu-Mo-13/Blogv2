@@ -10,7 +10,9 @@ export default async function Page({ params }: { params: { id: string } }) {
   return (
     <main className={styles.main}>
       <Image src="/monologue.png" alt="icon" width={120} height={82}></Image>
-      <Box className={styles.title} fontSize={25} fontWeight="bold">m_yuya&apos;s monologue</Box>
+      <Link className="title" key={"title"} href="/">
+        <Box className={styles.title} fontSize={25} fontWeight="bold">m_yuya&apos;s monologue</Box>
+      </Link>
       <Box className={styles.title} fontSize={25} borderBottom="medium" borderBottomStyle="solid">{article.title}</Box>
       <Box className={styles.card} fontSize={20}>{convertRichTextToPlainText(article.contents)}</Box>
     </main>

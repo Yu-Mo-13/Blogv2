@@ -9,7 +9,9 @@ export default async function Page() {
   return (
     <main className={styles.main}>
       <Image src="/monologue.png" alt="icon" width={120} height={82}></Image>
-      <Box className={styles.title} fontSize={25} fontWeight="bold">m_yuya&apos;s monologue</Box>
+      <Link className="title" key={"title"} href="/">
+        <Box className={styles.title} fontSize={25} fontWeight="bold">m_yuya&apos;s monologue</Box>
+      </Link>
       <Box className={styles.title} fontSize={25} borderBottom="medium" borderBottomStyle="solid">SNS</Box>
       {snslinks.map((snslink, index) => (
         <Link className={styles.card} key={index} href={snslink.url} fontSize={22}>
