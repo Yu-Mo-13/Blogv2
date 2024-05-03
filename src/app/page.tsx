@@ -19,7 +19,7 @@ export default async function Page() {
           <h2>{menu} &rarr;</h2>
         </Link>
       ))}
-      <Box className={styles.card} fontSize={25} borderBottom="medium" borderBottomStyle="solid">Recent Posts</Box>
+      <Box className={styles.title} fontSize={25} borderBottom="medium" borderBottomStyle="solid">Recent Posts</Box>
       {articles.length > 0 && articles.map((article: Article) => (
         <Link className={styles.card} key={article.id} href={`/articles/id=${article.id}`}>
           <Box className={styles.card} fontSize={20}>{`${article.title} (${convertDate(article.createdAt)}更新)`}</Box>

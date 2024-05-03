@@ -1,7 +1,9 @@
+import { apiInfo, endPoints } from "@/constants/const";
+
 // その他パラメータ設定情報を取得する
-const baseUrl = process.env.API_BASE_URL;
-const apiKey = process.env.API_KEY;
-const endpoint = "profiles";
+const baseUrl = apiInfo.baseUrl;
+const apiKey = apiInfo.apiKey;
+const endpoint = endPoints.profiles;
 
 export const getAllProfiles = async () => {
   const headers: HeadersInit = {
@@ -11,6 +13,9 @@ export const getAllProfiles = async () => {
   const res = await fetch(`${baseUrl}${endpoint}`, {
     method: "GET",
     headers: headers,
+    next: {
+      revalidate: apiInfo.rerenderTime,
+    }
   });
   const data = await res.json();
   return data.contents;
