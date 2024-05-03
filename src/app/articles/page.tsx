@@ -6,7 +6,7 @@ import { getAllArticles } from "@/apis/article";
 import { rootUrl, endPoints } from "@/constants/const";
 import { convertDate } from "@/functions/fucntion";
 
-export default async function Home() {
+export default async function Page() {
   const articles: Article[] = await getAllArticles();
   return (
     <main className={styles.main}>

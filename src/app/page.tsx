@@ -6,7 +6,7 @@ import { getAllArticles, getArticleById } from "@/apis/article";
 import type { Article } from "@/types/article";
 import { convertDate } from "@/functions/fucntion";
 
-export default async function Home() {
+export default async function Page() {
   const articles = await getAllArticles();
   return (
     <main className={styles.main}>

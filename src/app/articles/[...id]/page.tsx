@@ -5,7 +5,7 @@ import type { Article } from "@/types/article";
 import { getArticleById } from "@/apis/article";
 import { convertRichTextToPlainText } from "@/functions/fucntion";
 
-export default async function Home({ params }: { params: { id: string } }) {
+export default async function Page({ params }: { params: { id: string } }) {
   const article: Article = await getArticleById(params.id);
   return (
     <main className={styles.main}>

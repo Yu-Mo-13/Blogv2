@@ -6,7 +6,7 @@ import { getAllProfiles } from "@/apis/profile";
 import { rootUrl, endPoints } from "@/constants/const";
 import { convertRichTextToPlainText } from "@/functions/fucntion";
 
-export default async function Home() {
+export default async function Page() {
   const profiles: Profile[] = await getAllProfiles();
   return (
     <main className={styles.main}>

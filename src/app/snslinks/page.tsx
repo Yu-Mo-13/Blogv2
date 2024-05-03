@@ -4,7 +4,7 @@ import { Link, Box, Image } from "@chakra-ui/react";
 import type { Sns } from '../../types/sns';
 import { getAllSns } from '../../apis/sns';
 
-export default async function Home() {
+export default async function Page() {
   const snslinks: Sns[] = await getAllSns();
   return (
     <main className={styles.main}>
