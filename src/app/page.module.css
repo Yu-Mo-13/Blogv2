@@ -7,14 +7,22 @@
   min-height: 100vh;
   background-color: #DCFFDC;
   /* 右端・左端・上端・下端をレスポンシブにする */
-  padding: 10% 2rem 2rem 2rem;
+  padding: 8rem 2rem 2rem 2rem;
+}
+
+.title {
+  font-weight: bold;
 }
 
 .description {
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
+  padding-left: 33%;
+  padding-right: 33%;
+  padding-bottom: 30%;
   font-size: 0.85rem;
+  font-weight: bolder;
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
@@ -31,7 +39,6 @@
 .description p {
   position: relative;
   margin: 0;
-  padding: 1rem;
   background-color: rgba(var(--callout-rgb), 0.5);
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
@@ -69,8 +76,7 @@
 
 .card p {
   margin: 0;
-  opacity: 0.6;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   max-width: 30ch;
   text-wrap: balance;
@@ -166,6 +172,7 @@
 
   .description {
     font-size: 0.8rem;
+    padding: 0;
   }
 
   .description a {
@@ -174,16 +181,11 @@
 
   .description p,
   .description div {
-    display: flex;
-    justify-content: center;
-    position: fixed;
     width: 100%;
   }
 
   .description p {
     align-items: center;
-    inset: 0 0 auto;
-    padding: 2rem 1rem 1.4rem;
     border-radius: 0;
     border: none;
     border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
@@ -193,14 +195,11 @@
       rgba(var(--callout-rgb), 0.5)
     );
     background-clip: padding-box;
-    backdrop-filter: blur(24px);
   }
 
   .description div {
     align-items: flex-end;
     pointer-events: none;
-    inset: auto 0 0;
-    padding: 2rem;
     height: 200px;
     background: linear-gradient(
       to bottom,

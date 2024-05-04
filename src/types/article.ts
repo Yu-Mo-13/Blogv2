@@ -6,4 +6,5 @@ export type Article = {
   revisedAt: string;
   title: string;
   contents: string;
+  contents2: string;
 };
