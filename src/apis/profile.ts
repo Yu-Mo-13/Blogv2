@@ -8,28 +8,14 @@ const endpoint = endPoints.profiles;
 export const getAllProfiles = async () => {
   const headers: HeadersInit = {
     "Content-Type": "application/json",
-    "X-MICROCMS-API-KEY": apiKey || "", // Ensure apiKey is not undefined
+    "X-MICROCMS-API-KEY": apiKey || "",
   };
   const res = await fetch(`${baseUrl}${endpoint}`, {
     method: "GET",
     headers: headers,
-    next: {
-      revalidate: apiInfo.rerenderTime,
-    }
+    // 表示する量が少ないため、キャッシュには保存しない
+    cache: "no-cache",
   });
   const data = await res.json();
   return data.contents;
 }
-
-export const getProfilesById = async (id: string) => {
-  const headers: HeadersInit = {
-    "Content-Type": "application/json",
-    "X-MICROCMS-API-KEY": apiKey || "", // Ensure apiKey is not undefined
-  };
-  const res = await fetch(`${baseUrl}${endpoint}/${id}`, {
-    method: "GET",
-    headers: headers,
-  });
-  const data = await res.json();
-  return data;
-};

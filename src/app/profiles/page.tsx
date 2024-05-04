@@ -16,7 +16,7 @@ export default async function Page() {
       </Link>
       <Box className={styles.title} fontSize={25} borderBottom="medium" borderBottomStyle="solid">Profile</Box>
       {profiles.map((profile, index) => (
-        <Link key={index} href={rootUrl + endPoints.profiles + '/' + profile.id} fontSize={22}>
+        <Link key={index} href={`${rootUrl}${endPoints.profiles}/${profile.id}`} fontSize={22}>
           <h2>{convertRichTextToPlainText(profile.value)}</h2>
         </Link>
       ))}
