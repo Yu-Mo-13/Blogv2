@@ -5,15 +5,13 @@ import { topMenu, topMenuLinks } from "@/constants/const";
 import { getAllArticles, getArticleById } from "@/apis/article";
 import type { Article } from "@/types/article";
 import { convertDate } from "@/functions/fucntion";
+import Header from "@/app/components/header";
 
 export default async function Page() {
   const articles = await getAllArticles();
   return (
     <main className={styles.main}>
-      <Image className={styles.logo} src="/monologue.png" alt="icon" width={120} height={82}></Image>
-      <Link className="title" key={"title"} href="/">
-        <Box className={styles.title} fontSize={25} fontWeight="bold">m_yuya&apos;s monologue</Box>
-      </Link>
+      <Header />
       {topMenu.map((menu, index) => (
         <Link className={styles.card} key={index} href={topMenuLinks[index]} fontSize={22}>
           <h2>{menu} &rarr;</h2>

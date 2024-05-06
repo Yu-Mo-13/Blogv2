@@ -5,15 +5,13 @@ import type { Article } from "@/types/article";
 import { getAllArticles } from "@/apis/article";
 import { rootUrl, endPoints } from "@/constants/const";
 import { convertDate } from "@/functions/fucntion";
+import Header from "@/app/components/header";
 
 export default async function Page() {
   const articles: Article[] = await getAllArticles();
   return (
     <main className={styles.main}>
-      <Image src="/monologue.png" alt="icon" width={120} height={82}></Image>
-      <Link className="title" key={"title"} href="/">
-        <Box className={styles.title} fontSize={25} fontWeight="bold">m_yuya&apos;s monologue</Box>
-      </Link>
+      <Header />
       <Box className={styles.title} fontSize={25} borderBottom="medium" borderBottomStyle="solid">Blog</Box>
       {articles.map((article, index) => (
         <Link key={index} href={rootUrl + endPoints.articles + '/' + article.id} fontSize={22}>
