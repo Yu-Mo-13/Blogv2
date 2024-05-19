@@ -14,9 +14,10 @@ export const getAllArticles = async () => {
     method: "GET",
     headers: headers,
     // 記事数の増加を考慮し、再レンダリング時間を設定
-    next: {
-      revalidate: apiInfo.rerenderTime,
-    }
+    cache: "no-cache",
+    // next: {
+    //   revalidate: apiInfo.rerenderTime,
+    // }
   });
   const data = await res.json();
   return data.contents;
@@ -32,9 +33,10 @@ export const getRecentArticles = async () => {
     method: "GET",
     headers: headers,
     // 記事数の増加を考慮し、再レンダリング時間を設定
-    next: {
-      revalidate: apiInfo.rerenderTime,
-    }
+    // next: {
+    //   revalidate: apiInfo.rerenderTime,
+    // }
+    cache: "no-cache",
   });
   const data = await res.json();
   return data.contents;
@@ -45,7 +47,7 @@ export const getArticleById = async (id: string) => {
     "Content-Type": "application/json",
     "X-MICROCMS-API-KEY": apiKey || "",
   };
-  const res = await fetch(`${baseUrl}${endpoint}?id=${id}`, {
+  const res = await fetch(`${baseUrl}${endpoint}?ids=${id[0].replace("id%3D", "")}`, {
     method: "GET",
     headers: headers,
     // 表示する量が少ないため、キャッシュには保存しない

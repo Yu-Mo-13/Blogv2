@@ -12,14 +12,14 @@ import Footer from '@/app/components/footer';
 export default async function Page({ params }: { params: { id: string } }) {
   const article: Article = await getArticleById(params.id);
   return (
-    <main className={styles.main}>
+    <main className={styles.articlemain}>
       <Header />
       <Box className={styles.title} borderBottom="medium" borderBottomStyle="solid">Blog</Box>
-      <Box className={styles.topmenu}>タイトル: {article.title}</Box>
-      <Box className={styles.card}>
+      <Box className={styles.articlecard}>タイトル: {article.title}</Box>
+      <Box className={styles.articlecard}>
         投稿日: {convertDate(article.createdAt)}
       </Box>
-      <Box className={styles.card}>
+      <Box className={styles.description}>
         {convertHtmlToReact(await convertMdToHtml(article.contents))}
       </Box>
       <Footer />

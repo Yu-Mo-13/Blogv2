@@ -4,6 +4,7 @@ import { Link, Box } from "@chakra-ui/react";
 import { topMenu, topMenuLinks } from "@/constants/const";
 import { getRecentArticles } from "@/apis/article";
 import type { Article } from "@/types/article";
+import { rootUrl, endPoints } from "@/constants/const";
 import { convertDate } from "@/functions/fucntion";
 import Header from "@/app/components/header";
 import Footer from "./components/footer";
@@ -20,7 +21,7 @@ export default async function Page() {
       ))}
       <Box className={styles.title} borderBottom="medium" borderBottomStyle="solid">Recent Posts</Box>
       {articles.length > 0 && articles.map((article: Article) => (
-        <Link className={styles.card} key={article.id} href={`/articles/id=${article.id}`}>
+        <Link className={styles.card} key={article.id} href={`${rootUrl}/${endPoints.articles}/id=${article.id}`}>
           <Box className={styles.card}>{`${article.title} (${convertDate(article.createdAt)} 更新)`}</Box>
         </Link>
       ))}

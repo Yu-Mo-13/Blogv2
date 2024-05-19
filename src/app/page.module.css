@@ -6,7 +6,18 @@
   min-height: 100vh;
   background-color: #DCFFDC;
   /* 右端・左端・上端・下端をレスポンシブにする */
-  padding: 8rem 2rem 2rem 2rem;
+  padding: 8rem 25% 2rem 25%;
+}
+
+.articlemain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #DCFFDC;
+  /* 右端・左端・上端・下端をレスポンシブにする */
+  padding: 8rem 25% 2rem 25%;
 }
 
 .title {
@@ -26,11 +37,9 @@
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
-  padding-left: 33%;
-  padding-right: 33%;
-  padding-bottom: 30%;
+  padding-top: 1.5rem;
   font-size: 1.5rem;
-  max-width: var(--max-width);
+  /* max-width: var(--max-width); */
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
@@ -63,6 +72,15 @@
   width: var(--max-width);
 }
 
+.articlecard {
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0);
+  padding-top: 1.5rem;
+  font-size: 1.5rem;
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+}
+
 .card {
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
@@ -89,7 +107,15 @@
   text-wrap: balance;
 }
 
-.card hr {
+.footer {
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0);
+  font-size: 1.5rem;
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+}
+
+.footer hr {
   margin: 1.5rem 0;
   width: 20rem;
   border-bottom: 1px solid black;
@@ -150,6 +176,18 @@
 
 /* Mobile */
 @media (max-width: 700px) {
+  .main {
+    height: fit-content;
+    /* 右端・左端・上端・下端をレスポンシブにする */
+    padding: 4rem 12% 30% 12%;
+  }
+
+  .articlemain {
+    height: fit-content;
+    /* 右端・左端・上端・下端をレスポンシブにする */
+    padding: 4rem 12% 550% 12%;
+  }
+
   .content {
     padding: 4rem;
   }
@@ -161,31 +199,51 @@
     text-align: center;
   }
 
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
   .card {
-    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    text-align: center;
   }
 
   .card h2 {
     margin-bottom: 0.5rem;
   }
 
+  .footer {
+    display: none;
+  }
+
   .center {
-    padding: 8rem 0 6rem;
+    padding: 0.5rem 0 1rem;
   }
 
   .center::before {
     transform: none;
-    height: 300px;
+    height: 10px;
   }
 
   .description {
-    padding: 0;
+    /* padding: 0; */
+    font-size: 1.2rem;
   }
 
   .description a {
     padding: 1rem;
   }
 
+  .description {
+    /* padding: 0; */
+    font-size: 1.2rem;
+  }
+
+  .description a {
+    padding: 1rem;
+  }
   .description p,
   .description div {
     width: 100%;

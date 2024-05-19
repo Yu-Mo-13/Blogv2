@@ -15,7 +15,7 @@ export default async function Page() {
       <Header />
       <Box className={styles.title} borderBottom="medium" borderBottomStyle="solid">Blog</Box>
       {articles.map((article, index) => (
-        <Link className={styles.card} key={index} href={rootUrl + endPoints.articles + '/' + article.id}>
+        <Link className={styles.card} key={index} href={`${rootUrl}/${endPoints.articles}/id=${article.id}`}>
           {article.title} ({convertDate(article.createdAt)} 更新)
         </Link>
       ))}
