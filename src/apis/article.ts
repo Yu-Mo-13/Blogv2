@@ -22,6 +22,24 @@ export const getAllArticles = async () => {
   return data.contents;
 };
 
+// 最近のブログ記事を取得する(最大3件)
+export const getRecentArticles = async () => {
+  const headers: HeadersInit = {
+    "Content-Type": "application/json",
+    "X-MICROCMS-API-KEY": apiKey || "",
+  };
+  const res = await fetch(`${baseUrl}${endpoint}?limit=3`, {
+    method: "GET",
+    headers: headers,
+    // 記事数の増加を考慮し、再レンダリング時間を設定
+    next: {
+      revalidate: apiInfo.rerenderTime,
+    }
+  });
+  const data = await res.json();
+  return data.contents;
+}
+
 export const getArticleById = async (id: string) => {
   const headers: HeadersInit = {
     "Content-Type": "application/json",

@@ -6,7 +6,7 @@ export default function Header() {
     <>
       <Image src="/monologue.png" alt="icon" width={120} height={82}></Image>
       <Link className="title" key={"title"} href="/">
-        <Box className={styles.title} fontSize={25} fontWeight="bold">m_yuya&apos;s monologue</Box>
+        <Box className={styles.title} fontWeight="bold">m_yuya&apos;s monologue</Box>
       </Link>
     </>
 );

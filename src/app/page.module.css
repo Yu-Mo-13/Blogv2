@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* padding: 18rem; */
   min-height: 100vh;
   background-color: #DCFFDC;
   /* 右端・左端・上端・下端をレスポンシブにする */
@@ -11,7 +10,16 @@
 }
 
 .title {
+  font-size: 1.8rem;
   font-weight: bold;
+}
+
+.topmenu {
+  font-size: 1.5rem;
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0);
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
 }
 
 .description {
@@ -21,8 +29,7 @@
   padding-left: 33%;
   padding-right: 33%;
   padding-bottom: 30%;
-  font-size: 0.85rem;
-  font-weight: bolder;
+  font-size: 1.5rem;
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
@@ -57,9 +64,9 @@
 }
 
 .card {
-  padding: 3rem 1.8rem;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
+  font-size: 1.5rem;
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
 }
@@ -82,6 +89,12 @@
   text-wrap: balance;
 }
 
+.card hr {
+  margin: 1.5rem 0;
+  width: 20rem;
+  border-bottom: 1px solid black;
+}
+
 .center {
   display: flex;
   justify-content: center;
@@ -94,7 +107,6 @@
   background: var(--secondary-glow);
   border-radius: 50%;
   width: 480px;
-  height: 360px;
   margin-left: -400px;
 }
 
@@ -113,10 +125,6 @@
   filter: blur(45px);
   transform: translateZ(0);
 }
-
-/* .logo {
-  position: relative;
-} */
 
 .logo {
   width: 100%;
@@ -171,7 +179,6 @@
   }
 
   .description {
-    font-size: 0.8rem;
     padding: 0;
   }
 
@@ -221,10 +228,6 @@
   .vercelLogo {
     filter: invert(1);
   }
-
-  /* .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  } */
 }
 
 @keyframes rotate {

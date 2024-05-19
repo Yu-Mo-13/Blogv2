@@ -10,7 +10,7 @@ export const getAllSns = async () => {
     "Content-Type": "application/json",
     "X-MICROCMS-API-KEY": apiKey || "",
   };
-  const res = await fetch(`${baseUrl}${endpoint}`, {
+  const res = await fetch(`${baseUrl}${endpoint}?orders=createdAt`, {
     method: "GET",
     headers: headers,
     // 表示する量が少ないため、キャッシュには保存しない
