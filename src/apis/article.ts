@@ -14,10 +14,9 @@ export const getAllArticles = async () => {
     method: "GET",
     headers: headers,
     // 記事数の増加を考慮し、再レンダリング時間を設定
-    cache: "no-cache",
-    // next: {
-    //   revalidate: apiInfo.rerenderTime,
-    // }
+    next: {
+      revalidate: apiInfo.rerenderTime,
+    }
   });
   const data = await res.json();
   return data.contents;
@@ -33,10 +32,9 @@ export const getRecentArticles = async () => {
     method: "GET",
     headers: headers,
     // 記事数の増加を考慮し、再レンダリング時間を設定
-    // next: {
-    //   revalidate: apiInfo.rerenderTime,
-    // }
-    cache: "no-cache",
+    next: {
+      revalidate: apiInfo.rerenderTime,
+    }
   });
   const data = await res.json();
   return data.contents;
