@@ -6,7 +6,7 @@ import { getAllSns } from '../../apis/sns';
 import Header from "@/app/components/header";
 import Footer from "@/app/components/footer";
 
-export async function Page() {
+export default async function Page() {
   const snslinks: Sns[] = await getAllSns();
   return (
     <main className={styles.main}>
@@ -21,5 +21,3 @@ export async function Page() {
     </main>
   );
 }
-
-export default Page;
