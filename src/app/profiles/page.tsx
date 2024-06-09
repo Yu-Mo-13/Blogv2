@@ -14,7 +14,7 @@ export default async function Page() {
       <Header />
       <Box className={styles.title} borderBottom="medium" borderBottomStyle="solid">Profile</Box>
       {profiles.map(async (profile, index) => (
-        <Box className={styles.description} key={index}>
+        <Box className={styles.profile} key={index}>
           {convertHtmlToReact(await convertMdToHtml(profile.value))}
         </Box>
       ))}

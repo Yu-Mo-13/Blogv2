@@ -1,5 +1,6 @@
 import { format } from "@formkit/tempo"
-import * as marked from "marked";
+// import * as marked from "marked";
+import { marked } from "marked";
 import React from "react";
 
 // 日付の形式をYYYY-MM-DDThh:mm:sssZからYYYY/MM/DDに変換する
@@ -13,5 +14,5 @@ export function convertHtmlToReact(html: string): JSX.Element {
 }
 
 export async function convertMdToHtml(md: string): Promise<string> {
-  return await marked.parse(md);
+  return await marked(md);
 }

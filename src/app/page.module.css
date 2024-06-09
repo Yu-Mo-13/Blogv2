@@ -39,10 +39,28 @@
   align-items: inherit;
   padding-top: 1.5rem;
   font-size: 1.5rem;
-  /* max-width: var(--max-width); */
-  width: 100%;
+  max-width: 105rem;
+  width: 65%;
   z-index: 2;
   font-family: var(--font-mono);
+}
+
+.description h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.description h2 {
+  font-size: 1.5rem;
+}
+
+.description h3 {
+  font-size: 1.3rem;
+}
+
+.description ul {
+  font-size: 1.2rem;
+  padding-left: 1.7rem;
 }
 
 .description a {
@@ -58,6 +76,32 @@
   background-color: rgba(var(--callout-rgb), 0.5);
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
+  font-size: 1.2rem;
+}
+
+.profile {
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  padding-top: 1.5rem;
+  font-size: 1.5rem;
+  max-width: 90rem;
+  width: 45%;
+  z-index: 2;
+  font-family: var(--font-mono);
+}
+
+.profile ul {
+  font-size: 1.2rem;
+}
+
+.profile p {
+  position: relative;
+  margin: 0;
+  background-color: rgba(var(--callout-rgb), 0.5);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
+  font-size: 1.2rem;
 }
 
 .code {
@@ -227,23 +271,56 @@
     height: 10px;
   }
 
-  .description {
-    /* padding: 0; */
+  .profile {
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    padding-top: 1.5rem;
+    font-size: 1.5rem;
+    width: 70%;
+    z-index: 2;
+    font-family: var(--font-mono);
+  }
+  
+  .profile ul {
     font-size: 1.2rem;
+  }
+  
+  .profile p {
+    position: relative;
+    margin: 0;
+    background-color: rgba(var(--callout-rgb), 0.5);
+    border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+    border-radius: var(--border-radius);
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
+    width: 80%;
+    }
+
+  .description h1 {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  
+  .description h2 {
+    font-size: 1.2rem;
+  }
+  
+  .description h3 {
+    font-size: 1rem;
+  }
+  
+  .description ul {
+    font-size: 1rem;
   }
 
   .description a {
     padding: 1rem;
   }
 
-  .description {
-    /* padding: 0; */
-    font-size: 1.2rem;
-  }
-
-  .description a {
-    padding: 1rem;
-  }
   .description p,
   .description div {
     width: 100%;
