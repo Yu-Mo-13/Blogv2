@@ -34,3 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# config.ini
+config.ini
+config_prod.ini
+config_dev.ini
