@@ -12,7 +12,7 @@ def getMultiLineSize(width):
   return (width, 30)
 
 def getTitle(functionSeqNo):
-  titles = ['ブログ記事作成', 'プロフィール編集', 'SNSアカウント']
+  titles = ['ブログ記事作成', 'プロフィール編集', 'SNSアカウント', 'メニュー']
   return titles[functionSeqNo]
 
 def getDialogTitle():

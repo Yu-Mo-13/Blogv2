@@ -13,9 +13,16 @@ size = getInputTextSize(20)
 
 # 画面レイアウト
 layout = [
-  [sg.Text(getTitle(0), font=font),
-   sg.Button('投稿', font=font, key='post'),
-   sg.Button('終了', font=font, key='cancel')
+  [
+    sg.Text(getTitle(0), font=font),
+    sg.Button('投稿', font=font, key='post'),
+    sg.Button('終了', font=font, key='cancel')
+  ],
+  [
+    sg.Button('h1', font=font, key='h1'),
+    sg.Button('h2', font=font, key='h2'),
+    sg.Button('h3', font=font, key='h3'),
+    sg.Button('ul', font=font, key='ul')
   ],
   [sg.Text('タイトル', font=font)],
   [sg.InputText(size=getInputTextSize(30), font=font, key='title')],
@@ -56,6 +63,23 @@ while True:
         log.write('error', f'記事の投稿に失敗しました。\n{e}')
         sg.popup(f'記事の投稿に失敗しました。\n{e}', font=font_popup)
 
+  if event.startswith('h') or event == 'ul':
+    # ボタンのイベントを取得
+    button = event
+    text = ''
+
+    if button == 'h1':
+      text = '# '
+    if button == 'h2':
+      text = '## '
+    if button == 'h3':
+      text = '### '
+    if button == 'ul':
+      text = '- '
+
+    # カーソル位置にテキストを挿入
+    window['blogcontent'].update(f'{values["blogcontent"]}\n{text}')
+  
   if event == 'cancel':
     if sg.PopupYesNo(f'{getTitle(0)}を終了しますか？', title=getDialogTitle() ,font=font_popup) == 'Yes':
       break
