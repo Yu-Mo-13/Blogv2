@@ -42,3 +42,6 @@ next-env.d.ts
 config.ini
 config_prod.ini
 config_dev.ini
+
+# command file
+Menu.command
