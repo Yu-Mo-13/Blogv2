@@ -16,6 +16,9 @@
 # production
 /build
 
+# python venv
+/.venv
+
 # misc
 .DS_Store
 *.pem
@@ -34,3 +37,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# config.ini
+config.ini
+config_prod.ini
+config_dev.ini
