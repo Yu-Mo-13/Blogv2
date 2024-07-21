@@ -25,15 +25,19 @@ while True:
     subp = subprocess.Subprocess(['python3', 'article.py'])
     subp.run()
   
-  elif event == 'profile':
-    subp = subprocess.Subprocess(['python3', 'profile.py'])
-    subp.run()
+  if event == 'profile':
+    sg.popup(f"{getTitle(1)}画面はメンテナンス中です。", font=font)
+    continue
+    # subp = subprocess.Subprocess(['python3', 'profile.py'])
+    # subp.run()
   
-  elif event == 'snslink':
-    subp = subprocess.Subprocess(['python3', 'snslink.py'])
-    subp.run()
+  if event == 'snslink':
+    sg.popup(f"{getTitle(2)}画面はメンテナンス中です。", font=font)
+    continue
+    # subp = subprocess.Subprocess(['python3', 'snslink.py'])
+    # subp.run()
   
-  elif event == 'cancel':
+  if event == 'cancel':
     break
 
 window.close()
