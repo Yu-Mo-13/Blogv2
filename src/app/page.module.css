@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  background-color: #DCFFDC;
+  background-color: #dcffdc;
   /* 右端・左端・上端・下端をレスポンシブにする */
   padding: 8rem 25% 2rem 25%;
 }
@@ -15,7 +15,7 @@
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  background-color: #DCFFDC;
+  background-color: #dcffdc;
   /* 右端・左端・上端・下端をレスポンシブにする */
   padding: 8rem 25% 2rem 25%;
 }
@@ -30,7 +30,14 @@
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
+  transition:
+    background 200ms,
+    border 200ms;
+}
+
+.topmenu h2 {
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 .description {
@@ -83,8 +90,8 @@
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
-  padding-top: 1.5rem;
-  font-size: 1.5rem;
+  padding-top: 1rem;
+  font-size: 1.8rem;
   max-width: 90rem;
   width: 45%;
   z-index: 2;
@@ -92,7 +99,7 @@
 }
 
 .profile ul {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .profile p {
@@ -101,7 +108,7 @@
   background-color: rgba(var(--callout-rgb), 0.5);
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .code {
@@ -122,7 +129,9 @@
   padding-top: 1.5rem;
   font-size: 1.5rem;
   border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
+  transition:
+    background 200ms,
+    border 200ms;
 }
 
 .card {
@@ -130,7 +139,11 @@
   background: rgba(var(--card-rgb), 0);
   font-size: 1.5rem;
   border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
+  transition:
+    background 200ms,
+    border 200ms;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .card span {
@@ -156,7 +169,9 @@
   background: rgba(var(--card-rgb), 0);
   font-size: 1.5rem;
   border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
+  transition:
+    background 200ms,
+    border 200ms;
 }
 
 .footer hr {
@@ -170,7 +185,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 4rem 0;
+  padding: 0.5rem 0;
 }
 
 .center::before {
@@ -178,13 +193,6 @@
   border-radius: 50%;
   width: 480px;
   margin-left: -400px;
-}
-
-.center::after {
-  background: var(--primary-glow);
-  width: 240px;
-  height: 180px;
-  z-index: -1;
 }
 
 .center::before,
@@ -250,7 +258,7 @@
 
   .card {
     font-size: 1.2rem;
-    padding: 0.5rem;
+    padding: 0.2rem;
     text-align: center;
   }
 
@@ -281,11 +289,11 @@
     z-index: 2;
     font-family: var(--font-mono);
   }
-  
+
   .profile ul {
     font-size: 1.2rem;
   }
-  
+
   .profile p {
     position: relative;
     margin: 0;
@@ -298,21 +306,21 @@
   .description {
     font-size: 1.3rem;
     width: 80%;
-    }
+  }
 
   .description h1 {
     font-size: 1.3rem;
     font-weight: bold;
   }
-  
+
   .description h2 {
     font-size: 1.2rem;
   }
-  
+
   .description h3 {
     font-size: 1rem;
   }
-  
+
   .description ul {
     font-size: 1rem;
   }
@@ -356,6 +364,10 @@
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
+  }
+  .topmenu h2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 }
 
