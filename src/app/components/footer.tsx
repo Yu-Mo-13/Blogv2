@@ -6,7 +6,7 @@ export default function Footer() {
     <>
       <Box className={styles.footer}>
         <hr />
-        <small className={styles.center}>© 2024 m_yuya</small>
+        <small className={styles.center}>© 2025 m_yuya</small>
       </Box>
     </>
 );
