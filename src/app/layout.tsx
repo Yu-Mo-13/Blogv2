@@ -24,6 +24,21 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "m_yuya's monologue",
+    description: "m_yuya's monologue ver 2",
+    images: [
+      {
+        url: "https://blogv2-next-three.vercel.app/monologue.png",
+        width: 120,
+        height: 82,
+        alt: "m_yuya's monologue",
+      },
+    ],
+    site: "@mzaka059_t",
+    creator: "@mzaka059_t",
+  },
 };
 
 export default function RootLayout({
