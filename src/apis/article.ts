@@ -1,43 +1,28 @@
 import { apiInfo, endPoints } from "@/constants/const";
-import { baseUrl, headers } from "@/constants/api";
+import { apiClient } from "@/apis/common/common";
 
 // ブログ記事を取得する
 const endpoint = endPoints.articles;
 
 export const getAllArticles = async () => {
-  const res = await fetch(`${baseUrl}${endpoint}`, {
-    method: "GET",
-    headers: headers,
-    // 記事数の増加を考慮し、再レンダリング時間を設定
+  return await apiClient.index(endpoint, {
     next: {
       revalidate: apiInfo.rerenderTime,
     },
   });
-  const data = await res.json();
-  return data.contents;
 };
 
 // 最近のブログ記事を取得する(最大3件)
 export const getRecentArticles = async () => {
-  const res = await fetch(`${baseUrl}${endpoint}?limit=3`, {
-    method: "GET",
-    headers: headers,
-    // 記事数の増加を考慮し、再レンダリング時間を設定
+  return await apiClient.index(`${endpoint}?limit=3`, {
     next: {
       revalidate: apiInfo.rerenderTime,
     },
   });
-  const data = await res.json();
-  return data.contents;
 };
 
 export const getArticleById = async (id: string) => {
-  const res = await fetch(`${baseUrl}${endpoint}?ids=${id[0].replace("id%3D", "")}`, {
-    method: "GET",
-    headers: headers,
-    // 表示する量が少ないため、キャッシュには保存しない
+  return await apiClient.show(`${endpoint}?ids=${id[0].replace("id%3D", "")}`, {
     cache: "no-cache",
   });
-  const data = await res.json();
-  return data.contents[0];
 };

@@ -4,10 +4,11 @@ import { Link, Box } from "@chakra-ui/react";
 import { topMenu, topMenuLinks } from "@/constants/const";
 import { getRecentArticles } from "@/apis/article";
 import type { Article } from "@/types/article";
-import { rootUrl, endPoints } from "@/constants/const";
+import { rootUrl } from "@/constants/const";
 import { convertDate } from "@/functions/fucntion";
 import Header from "@/app/components/header";
 import Footer from "./components/footer";
+import { FunctionEnum } from "@/enum/function";
 
 export default async function Page() {
   const articles = await getRecentArticles();
@@ -19,12 +20,21 @@ export default async function Page() {
           <h2>{menu} &rarr;</h2>
         </Link>
       ))}
-      <Box className={styles.title} borderBottom="medium" borderBottomStyle="solid">Recent Posts</Box>
-      {articles.length > 0 && articles.map((article: Article) => (
-        <Link className={styles.card} key={article.id} href={`${rootUrl}/${endPoints.articles}/id=${article.id}`}>
-          <Box className={styles.card}>{`${article.title} (${convertDate(article.createdAt)} 更新)`}</Box>
-        </Link>
-      ))}
+      <Box className={styles.title} borderBottom="medium" borderBottomStyle="solid">
+        Recent Posts
+      </Box>
+      {articles.length > 0 &&
+        articles.map((article: Article) => (
+          <Link
+            className={styles.card}
+            key={article.id}
+            href={`${rootUrl}/${FunctionEnum.ARTICLES}/id=${article.id}`}
+          >
+            <Box
+              className={styles.card}
+            >{`${article.title} (${convertDate(article.createdAt)} 更新)`}</Box>
+          </Link>
+        ))}
       <Footer />
     </main>
   );
