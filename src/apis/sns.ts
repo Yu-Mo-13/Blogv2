@@ -1,15 +1,10 @@
-import { apiInfo, endPoints } from "@/constants/const";
+import { endPoints } from "@/constants/const";
+import { baseUrl, headers } from "@/constants/api";
 
 // 各サイトへのリンク情報を取得する
-const baseUrl = apiInfo.baseUrl;
-const apiKey = apiInfo.apiKey;
 const endpoint = endPoints.snslinks;
 
 export const getAllSns = async () => {
-  const headers: HeadersInit = {
-    "Content-Type": "application/json",
-    "X-MICROCMS-API-KEY": apiKey || "",
-  };
   const res = await fetch(`${baseUrl}${endpoint}?orders=createdAt`, {
     method: "GET",
     headers: headers,
