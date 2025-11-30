@@ -6,18 +6,14 @@ const endpoint = endPoints.articles;
 
 export const getAllArticles = async () => {
   return await apiClient.index(endpoint, {
-    next: {
-      revalidate: apiInfo.rerenderTime,
-    },
+    cache: "no-cache",
   });
 };
 
 // 最近のブログ記事を取得する(最大3件)
 export const getRecentArticles = async () => {
   return await apiClient.index(`${endpoint}?limit=3`, {
-    next: {
-      revalidate: apiInfo.rerenderTime,
-    },
+    cache: "no-cache",
   });
 };
 
