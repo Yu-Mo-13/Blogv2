@@ -23,6 +23,7 @@
     "@types/marked": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^7.14.1",
     "@typescript-eslint/parser": "^7.14.1",
+    "@vercel/edge-config": "^1.4.3",
     "eslint-config-prettier": "^9.1.0",
     "framer-motion": "^11.0.25",
     "html-to-text": "^9.0.5",
