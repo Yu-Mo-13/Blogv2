@@ -7,8 +7,16 @@ import {
 import Header from "@/app/components/header";
 import Footer from '@/app/components/footer';
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const article: Article = await getArticleById(params.id);
+type PageProps = {
+  params: Promise<{
+    id: string[];
+  }>;
+};
+
+export default async function Page({ params }: PageProps) {
+  const { id } = await params;
+  const article: Article = await getArticleById(id[0]);
+
   return (
     <main className={styles.articlemain}>
       <Header />
