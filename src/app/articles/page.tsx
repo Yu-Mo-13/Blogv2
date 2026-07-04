@@ -1,6 +1,5 @@
-import React from "react";
+import Link from "next/link";
 import styles from "../page.module.css";
-import { Link, Box } from "@chakra-ui/react";
 import type { Article } from "@/types/article";
 import { getAllArticles } from "@/apis/article";
 import { rootUrl } from "@/constants/const";
@@ -14,9 +13,9 @@ export default async function Page() {
   return (
     <main className={styles.main}>
       <Header />
-      <Box className={styles.title} borderBottom="medium" borderBottomStyle="solid">
+      <div className={styles.title} style={{ borderBottom: "medium solid" }}>
         Blog
-      </Box>
+      </div>
       {articles.map((article, index) => (
         <Link
           className={styles.card}

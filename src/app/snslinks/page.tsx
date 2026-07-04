@@ -1,6 +1,4 @@
-import React from "react";
 import styles from "../page.module.css";
-import { Link, Box } from "@chakra-ui/react";
 import type { Sns } from "../../types/sns";
 import { getAllSns } from "../../apis/sns";
 import Header from "@/app/components/header";
@@ -11,13 +9,13 @@ export default async function Page() {
   return (
     <main className={styles.main}>
       <Header />
-      <Box className={styles.title} borderBottom="medium" borderBottomStyle="solid">
+      <div className={styles.title} style={{ borderBottom: "medium solid" }}>
         Link
-      </Box>
+      </div>
       {snslinks.map((snslink, index) => (
-        <Link className={styles.card} key={index} href={snslink.url} isExternal>
+        <a className={styles.card} key={index} href={snslink.url} target="_blank" rel="noreferrer">
           {snslink.application} ({snslink.account})
-        </Link>
+        </a>
       ))}
       <Footer />
     </main>

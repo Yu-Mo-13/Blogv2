@@ -1,6 +1,4 @@
-import React from "react";
 import styles from "../page.module.css";
-import { Box } from "@chakra-ui/react";
 import type { Profile } from "@/types/profile";
 import { getAllProfiles } from "@/apis/profile";
 import { convertMdToHtml, convertHtmlToReact } from "@/functions/fucntion";
@@ -12,11 +10,11 @@ export default async function Page() {
   return (
     <main className={styles.main}>
       <Header />
-      <Box className={styles.title} borderBottom="medium" borderBottomStyle="solid">Profile</Box>
+      <div className={styles.title} style={{ borderBottom: "medium solid" }}>Profile</div>
       {profiles.map(async (profile, index) => (
-        <Box className={styles.profile} key={index}>
+        <div className={styles.profile} key={index}>
           {convertHtmlToReact(await convertMdToHtml(profile.value))}
-        </Box>
+        </div>
       ))}
       <Footer />
     </main>

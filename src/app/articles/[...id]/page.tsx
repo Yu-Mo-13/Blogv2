@@ -1,6 +1,4 @@
-import React from "react";
 import styles from "../../page.module.css";
-import { Box } from "@chakra-ui/react";
 import type { Article } from "@/types/article";
 import { getArticleById } from "@/apis/article";
 import {
@@ -14,14 +12,14 @@ export default async function Page({ params }: { params: { id: string } }) {
   return (
     <main className={styles.articlemain}>
       <Header />
-      <Box className={styles.title} borderBottom="medium" borderBottomStyle="solid">Blog</Box>
-      <Box className={styles.articlecard}>タイトル: {article.title}</Box>
-      <Box className={styles.articlecard}>
+      <div className={styles.title} style={{ borderBottom: "medium solid" }}>Blog</div>
+      <div className={styles.articlecard}>タイトル: {article.title}</div>
+      <div className={styles.articlecard}>
         投稿日: {convertDate(article.createdAt)}
-      </Box>
-      <Box className={styles.description}>
+      </div>
+      <div className={styles.description}>
         {convertHtmlToReact(await convertMdToHtml(article.contents))}
-      </Box>
+      </div>
       <Footer />
     </main>
   );
