@@ -21,6 +21,7 @@ export default function MaintenancePage() {
           width={120}
           height={82}
           priority
+          style={{ height: "auto" }}
         />
         <p className={styles.label}>Maintenance</p>
         <h1 id="maintenance-title" className={styles.title}>

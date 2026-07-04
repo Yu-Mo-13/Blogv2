@@ -1,4 +1,4 @@
-import { apiInfo, endPoints } from "@/constants/const";
+import { endPoints } from "@/constants/const";
 import { apiClient } from "@/apis/common/common";
 
 // ブログ記事を取得する

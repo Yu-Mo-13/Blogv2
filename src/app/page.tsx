@@ -1,6 +1,5 @@
-import React from "react";
+import Link from "next/link";
 import styles from "./page.module.css";
-import { Link, Box } from "@chakra-ui/react";
 import { topMenu, topMenuLinks } from "@/constants/const";
 import { getRecentArticles } from "@/apis/article";
 import type { Article } from "@/types/article";
@@ -20,9 +19,9 @@ export default async function Page() {
           <h2>{menu} &rarr;</h2>
         </Link>
       ))}
-      <Box className={styles.title} borderBottom="medium" borderBottomStyle="solid">
+      <div className={styles.title} style={{ borderBottom: "medium solid" }}>
         Recent Posts
-      </Box>
+      </div>
       {articles.length > 0 &&
         articles.map((article: Article) => (
           <Link
@@ -30,9 +29,7 @@ export default async function Page() {
             key={article.id}
             href={`${rootUrl}/${FunctionEnum.ARTICLES}/id=${article.id}`}
           >
-            <Box
-              className={styles.card}
-            >{`${article.title} (${convertDate(article.createdAt)} 更新)`}</Box>
+            {`${article.title} (${convertDate(article.createdAt)} 更新)`}
           </Link>
         ))}
       <Footer />
