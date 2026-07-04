@@ -18,7 +18,9 @@ export const getRecentArticles = async () => {
 };
 
 export const getArticleById = async (id: string) => {
-  return await apiClient.show(`${endpoint}?ids=${id[0].replace("id%3D", "")}`, {
+  const articleId = decodeURIComponent(id).replace(/^id=/, "");
+
+  return await apiClient.show(`${endpoint}?ids=${articleId}`, {
     cache: "no-cache",
   });
 };
